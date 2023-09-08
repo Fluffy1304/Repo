@@ -1,6 +1,6 @@
 //Maya ASCII 2024 scene
 //Name: b-2 stealth bomber.ma
-//Last modified: Fri, Sep 08, 2023 05:19:40 PM
+//Last modified: Fri, Sep 08, 2023 05:22:55 PM
 //Codeset: 1252
 requires maya "2024";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" "mtoa" "5.3.1.1";
@@ -10,17 +10,17 @@ fileInfo "product" "Maya 2024";
 fileInfo "version" "2024";
 fileInfo "cutIdentifier" "202304191415-7fa20164c6";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 22621)";
-fileInfo "UUID" "C32A9CE9-45C2-1386-CFBA-E7A82635AFF9";
+fileInfo "UUID" "F9F782EC-4B7F-079A-5184-6CB15642CBE3";
 createNode transform -s -n "persp";
 	rename -uid "95FCF9BF-413C-3085-284F-C0A2463A7D00";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -8.9106358345812353 23.937059695217179 -18.787156254635967 ;
-	setAttr ".r" -type "double3" -48.938352732918482 569.79999999988729 0 ;
+	setAttr ".t" -type "double3" 0.54074873504731968 21.637099564894616 -7.0921436723149309 ;
+	setAttr ".r" -type "double3" -76.538352732984848 538.59999999974559 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "F8E58B77-44DD-CEC9-021A-2C95352C99DF";
 	setAttr -k off ".v" no;
 	setAttr ".fl" 34.999999999999993;
-	setAttr ".coi" 28.607002375660471;
+	setAttr ".coi" 19.814188548844875;
 	setAttr ".imn" -type "string" "persp";
 	setAttr ".den" -type "string" "persp_depth";
 	setAttr ".man" -type "string" "persp_mask";
@@ -97,20 +97,20 @@ createNode mesh -n "pCubeShape1" -p "pCube1";
 		-0.7272796 0.5252493 -0.24163556 -1.0270503 0.46853924 -0.24163556 -0.7272796 0.46853924 
 		0.24163556 -0.7272796 0.5252493 0.24163556 -1.0270503;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "CA677A77-413B-8C6B-A1D9-F58B58D70190";
+	rename -uid "AF3B0156-4A8B-45F7-653A-A394F8903F07";
 	setAttr -s 2 ".lnk";
 	setAttr -s 2 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "823EF9A2-4677-3F49-8BD6-56BBC378ED34";
+	rename -uid "3E6EC9D5-424A-4866-18F9-58840A318D3A";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "5F9BAE20-4E7C-9174-128D-64BC86735298";
+	rename -uid "9371194C-4760-CBB7-F2A6-B19EEB8F48E0";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "B9E01601-450A-640A-BE11-6F955D1C09DC";
+	rename -uid "EF11376A-4D59-E156-018C-1E933DA5BC0C";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "D38A0A88-4D48-2DA3-7276-ACB1E6BBE27A";
 	setAttr ".ufem" -type "stringArray" 0  ;
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "32F99070-400D-074E-1523-BCB0896D082E";
+	rename -uid "1ADDDF39-419E-F03A-0294-40A519AEE0C3";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "0823370F-497A-4685-07A3-16B7DAC56E4B";
 	setAttr ".g" yes;
@@ -214,11 +214,8 @@ createNode polySplitRing -n "polySplitRing1";
 createNode polyTweak -n "polyTweak2";
 	rename -uid "E34002CF-482A-7951-6DD2-188B3D49FC78";
 	setAttr ".uopa" yes;
-	setAttr -s 5 ".tk";
-	setAttr ".tk[2]" -type "float3" -1.2064241 0 -1.0253159 ;
-	setAttr ".tk[3]" -type "float3" 1.2064241 0 -1.0253159 ;
-	setAttr ".tk[4]" -type "float3" -1.2064241 0 -1.0253159 ;
-	setAttr ".tk[5]" -type "float3" 1.2064241 0 -1.0253159 ;
+	setAttr -s 4 ".tk[2:5]" -type "float3"  -1.20642412 0 -1.025315881
+		 1.20642412 0 -1.025315881 -1.20642412 0 -1.025315881 1.20642412 0 -1.025315881;
 createNode polyExtrudeFace -n "polyExtrudeFace1";
 	rename -uid "F78A3C52-45BE-F673-F0F8-C49E906F226C";
 	setAttr ".ics" -type "componentList" 1 "f[7]";
@@ -254,7 +251,7 @@ createNode polyExtrudeFace -n "polyExtrudeFace2";
 createNode polyTweak -n "polyTweak4";
 	rename -uid "61A881B9-4EA4-EC25-3E98-4DBE39128F39";
 	setAttr ".uopa" yes;
-	setAttr -s 7 ".tk";
+	setAttr -s 6 ".tk";
 	setAttr ".tk[8]" -type "float3" -0.016585439 0 -0.46753111 ;
 	setAttr ".tk[9]" -type "float3" -0.016585439 0 -0.46753111 ;
 	setAttr ".tk[10]" -type "float3" 0.01658541 0 -0.46753111 ;
@@ -276,7 +273,7 @@ createNode polyExtrudeFace -n "polyExtrudeFace3";
 createNode polyTweak -n "polyTweak5";
 	rename -uid "65B92BD1-452E-F4B7-06AF-7EA48BEA1F0D";
 	setAttr ".uopa" yes;
-	setAttr -s 10 ".tk";
+	setAttr -s 9 ".tk";
 	setAttr ".tk[14]" -type "float3" 0 -0.74457616 0 ;
 	setAttr ".tk[16]" -type "float3" -0.49414548 -0.77811289 -0.62654918 ;
 	setAttr ".tk[17]" -type "float3" -0.18348391 -0.77811289 -0.44806865 ;
