@@ -1,6 +1,6 @@
 //Maya ASCII 2024 scene
 //Name: Table 2.ma
-//Last modified: Sat, Sep 16, 2023 01:10:39 PM
+//Last modified: Mon, Sep 18, 2023 08:17:57 PM
 //Codeset: 1252
 requires maya "2024";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" "mtoa" "5.3.1.1";
@@ -10,12 +10,12 @@ fileInfo "product" "Maya 2024";
 fileInfo "version" "2024";
 fileInfo "cutIdentifier" "202304191415-7fa20164c6";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 22621)";
-fileInfo "UUID" "2D8A8797-49E7-F0FC-20E9-90BE9ECB533E";
+fileInfo "UUID" "C84607C4-4DA5-A8B7-C4EB-87AFFE908E37";
 createNode transform -s -n "persp";
 	rename -uid "F34117C4-4B89-D425-0A4C-38B57C0C6E6C";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -0.2805349312047043 8.1348851037273704 -1.630004224983324 ;
-	setAttr ".r" -type "double3" -75.338352730037599 896.59999999990066 0 ;
+	setAttr ".t" -type "double3" 5.1639344766439343 3.457174261970053 -3.8562758620324367 ;
+	setAttr ".r" -type "double3" -18.938352729136451 486.19999999994297 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "2EDFF583-47FF-CD3D-9DD3-53A6546F4022";
 	setAttr -k off ".v" no;
@@ -135,20 +135,20 @@ parent -s -nc -r -add "|pCube2|pCubeShape2" "pCube3" ;
 parent -s -nc -r -add "|pCube2|pCubeShape2" "pCube4" ;
 parent -s -nc -r -add "|pCube2|pCubeShape2" "pCube5" ;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "70725FD4-4A6E-6CBF-58C9-82A96565E127";
+	rename -uid "C7DA6CB3-4C17-A8E0-6F8A-AD97FE403B05";
 	setAttr -s 2 ".lnk";
 	setAttr -s 2 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "317EBDFB-4641-79B3-C05D-08AF3DADD4A1";
+	rename -uid "7CA3728E-4E5F-3157-8823-1E9FA6645639";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "2BC42A36-4575-EF84-82C4-AF9075035263";
+	rename -uid "5373CAB5-4B18-3E3D-7441-12A953B1BA69";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "FE5B858F-472C-5724-EE1B-6EB03BD7E23E";
+	rename -uid "E4B83F0E-4B51-CAA4-4928-D481246C97C3";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "B62213E2-4D76-2691-852D-47B5D1F6843D";
 	setAttr ".ufem" -type "stringArray" 0  ;
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "2A21FAF4-4959-75FB-CAF8-C283CA78AD41";
+	rename -uid "E539E799-4D91-B3E5-163D-DB8AAB841794";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "02145611-4D6A-9551-910F-AA802AC904CD";
 	setAttr ".g" yes;
@@ -347,7 +347,7 @@ createNode polyMapSewMove -n "polyMapSewMove1";
 createNode polyTweakUV -n "polyTweakUV3";
 	rename -uid "5E1DEE32-4845-D050-26C9-98BF39F10969";
 	setAttr ".uopa" yes;
-	setAttr -s 5 ".uvtk";
+	setAttr -s 4 ".uvtk";
 	setAttr ".uvtk[2]" -type "float2" -0.10490215 -0.020118766 ;
 	setAttr ".uvtk[4]" -type "float2" -0.054393888 0.06480635 ;
 	setAttr ".uvtk[6]" -type "float2" -0.049673557 0.061999001 ;
@@ -390,19 +390,11 @@ createNode polyPlanarProj -n "polyPlanarProj4";
 createNode polyTweak -n "polyTweak2";
 	rename -uid "F3438BA1-43A7-CE56-5992-33B2947EFF85";
 	setAttr ".uopa" yes;
-	setAttr -s 13 ".tk";
-	setAttr ".tk[12]" -type "float3" 0.034279723 0 -0.034279723 ;
-	setAttr ".tk[13]" -type "float3" -0.034279723 0 -0.034279723 ;
-	setAttr ".tk[14]" -type "float3" -0.034279723 0 0.034279723 ;
-	setAttr ".tk[15]" -type "float3" 0.034279723 0 0.034279723 ;
-	setAttr ".tk[16]" -type "float3" -0.065218613 0 0.065218613 ;
-	setAttr ".tk[17]" -type "float3" 0.065218613 0 0.065218613 ;
-	setAttr ".tk[18]" -type "float3" 0.065218613 0 -0.065218613 ;
-	setAttr ".tk[19]" -type "float3" -0.065218613 0 -0.065218613 ;
-	setAttr ".tk[20]" -type "float3" 0.054499909 0 -0.054499909 ;
-	setAttr ".tk[21]" -type "float3" -0.054499909 0 -0.054499909 ;
-	setAttr ".tk[22]" -type "float3" -0.054499909 0 0.054499909 ;
-	setAttr ".tk[23]" -type "float3" 0.054499909 0 0.054499909 ;
+	setAttr -s 12 ".tk[12:23]" -type "float3"  0.034279723 0 -0.034279723
+		 -0.034279723 0 -0.034279723 -0.034279723 0 0.034279723 0.034279723 0 0.034279723
+		 -0.065218613 0 0.065218613 0.065218613 0 0.065218613 0.065218613 0 -0.065218613 -0.065218613
+		 0 -0.065218613 0.054499909 0 -0.054499909 -0.054499909 0 -0.054499909 -0.054499909
+		 0 0.054499909 0.054499909 0 0.054499909;
 createNode polyPlanarProj -n "polyPlanarProj5";
 	rename -uid "1B0ED8E2-43CA-9C23-D8D7-7C8C5241B574";
 	setAttr ".uopa" yes;

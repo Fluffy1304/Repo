@@ -1,6 +1,6 @@
 //Maya ASCII 2024 scene
 //Name: lamp 2.ma
-//Last modified: Mon, Sep 18, 2023 08:08:20 PM
+//Last modified: Mon, Sep 18, 2023 08:19:21 PM
 //Codeset: 1252
 requires maya "2024";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" "mtoa" "5.3.1.1";
@@ -10,12 +10,12 @@ fileInfo "product" "Maya 2024";
 fileInfo "version" "2024";
 fileInfo "cutIdentifier" "202304191415-7fa20164c6";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 22621)";
-fileInfo "UUID" "F976E08E-4662-F806-86FF-DFBA17A0628F";
+fileInfo "UUID" "86B31960-4D90-120E-796F-5E940AF24001";
 createNode transform -s -n "persp";
 	rename -uid "D16B32BF-446C-8CC6-3729-2D985C4218B2";
 	setAttr ".v" no;
-	setAttr ".t" -type "double3" -2.9885644884668299 5.1895284334046448 6.797898700631718 ;
-	setAttr ".r" -type "double3" -15.93835273363522 2496.9999999985721 -4.3190357301867967e-16 ;
+	setAttr ".t" -type "double3" -6.5128939858374091 2.7510302300228298 -5.7668904300130031 ;
+	setAttr ".r" -type "double3" 0.86164726765929522 1672.6000000015729 0 ;
 createNode camera -s -n "perspShape" -p "persp";
 	rename -uid "D7A2DEBE-46E0-9DFA-A546-3A993DA80797";
 	setAttr -k off ".v" no;
@@ -126,20 +126,20 @@ createNode mesh -n "pCylinderShape2" -p "pCylinder2";
 	setAttr ".covm[0]"  0 1 1;
 	setAttr ".cdvm[0]"  0 1 1;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "182B8E3B-4174-F9B6-6BEC-D3A6EC30DD2D";
+	rename -uid "22275842-400D-F2F1-5D0B-52A52A05D338";
 	setAttr -s 2 ".lnk";
 	setAttr -s 2 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "81C99E8F-4DAC-9A62-2C0F-4D9FFDE72FA3";
+	rename -uid "50B4F596-463B-ADB9-3C6C-9691B404CFA1";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "E5C9ABF2-4BCF-BB93-EBFA-C2A8601E85DA";
+	rename -uid "D197B09E-470F-E560-9C37-24ACEB241C02";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "2D34F376-4D2A-66F8-4E08-B5A2F16DF6BE";
+	rename -uid "F58556AE-476E-A367-95DF-618267513044";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "1A4F2F17-4BA6-E75A-7FFE-2B86D46426CF";
 	setAttr ".ufem" -type "stringArray" 0  ;
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "2C83AA7C-4E3B-EE45-5538-7B9B5048AC77";
+	rename -uid "29E10438-4539-1F7C-DC2B-CDA0DCB2AF34";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "DE9EB719-4334-23FD-4C7F-EF8410C8080D";
 	setAttr ".g" yes;
@@ -498,16 +498,11 @@ createNode polyPlanarProj -n "polyPlanarProj1";
 createNode polyTweak -n "polyTweak5";
 	rename -uid "62D78819-43F3-7FA4-15E4-9AA1E396018C";
 	setAttr ".uopa" yes;
-	setAttr -s 10 ".tk";
-	setAttr ".tk[49]" -type "float3" 0 0.045120765 -1.1695092e-08 ;
-	setAttr ".tk[50]" -type "float3" 1.3416907e-18 0.045120765 0.098105535 ;
-	setAttr ".tk[51]" -type "float3" -0.049052771 0.045120765 -1.1695092e-08 ;
-	setAttr ".tk[52]" -type "float3" -0.049052771 0.045120765 0.098105535 ;
-	setAttr ".tk[53]" -type "float3" -0.049052771 0.045120765 -0.098105535 ;
-	setAttr ".tk[54]" -type "float3" 0 0.045120765 -0.098105535 ;
-	setAttr ".tk[55]" -type "float3" 0.049052771 0.045120765 -0.098105535 ;
-	setAttr ".tk[56]" -type "float3" 0.049052771 0.045120765 -1.1695092e-08 ;
-	setAttr ".tk[57]" -type "float3" 0.049052771 0.045120765 0.098105535 ;
+	setAttr -s 9 ".tk[49:57]" -type "float3"  0 0.045120765 -1.1695092e-08
+		 1.3416907e-18 0.045120765 0.098105535 -0.049052771 0.045120765 -1.1695092e-08 -0.049052771
+		 0.045120765 0.098105535 -0.049052771 0.045120765 -0.098105535 0 0.045120765 -0.098105535
+		 0.049052771 0.045120765 -0.098105535 0.049052771 0.045120765 -1.1695092e-08 0.049052771
+		 0.045120765 0.098105535;
 createNode polyTweakUV -n "polyTweakUV4";
 	rename -uid "3F594607-4883-5693-F95A-EFA4614D6535";
 	setAttr ".uopa" yes;
