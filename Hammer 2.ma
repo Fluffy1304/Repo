@@ -1,6 +1,6 @@
 //Maya ASCII 2024 scene
 //Name: Hammer 2.ma
-//Last modified: Tue, Sep 19, 2023 03:29:07 PM
+//Last modified: Tue, Sep 19, 2023 03:36:58 PM
 //Codeset: 1252
 requires maya "2024";
 requires -nodeType "aiOptions" -nodeType "aiAOVDriver" -nodeType "aiAOVFilter" "mtoa" "5.3.1.1";
@@ -10,7 +10,7 @@ fileInfo "product" "Maya 2024";
 fileInfo "version" "2024";
 fileInfo "cutIdentifier" "202304191415-7fa20164c6";
 fileInfo "osv" "Windows 11 Home v2009 (Build: 22621)";
-fileInfo "UUID" "8CF659EF-47BE-02BD-5C5D-AB8634DBC5C9";
+fileInfo "UUID" "2387319B-4095-C07E-D170-BAAC47800EAA";
 createNode transform -s -n "persp";
 	rename -uid "7BCA9CE7-416E-7C04-1473-35AC72B758C2";
 	setAttr ".v" no;
@@ -96,7 +96,7 @@ createNode mesh -n "polySurfaceShape1" -p "pCube3";
 	rename -uid "F2070028-4F39-8662-ABE1-2EA0804873DF";
 	setAttr -k off ".v";
 	setAttr ".io" yes;
-	setAttr -s 4 ".iog[0].og";
+	setAttr -s 2 ".iog[0].og";
 	setAttr ".iog[0].og[0].gcl" -type "componentList" 3 "f[84:92]" "f[98:102]" "f[105:110]";
 	setAttr ".iog[0].og[3].gcl" -type "componentList" 4 "f[0:83]" "f[93:97]" "f[103:104]" "f[111:127]";
 	setAttr ".vir" yes;
@@ -539,20 +539,20 @@ createNode mesh -n "polySurfaceShape1" -p "pCube3";
 	setAttr ".hfd" -type "dataPolyComponent" Index_Data Face 0 ;
 	setAttr ".bw" 3;
 createNode lightLinker -s -n "lightLinker1";
-	rename -uid "A37C5CEF-4D69-44F4-89AB-26A4FBEBFAD6";
+	rename -uid "4AACE7F3-49BC-0F15-D8AC-16BE41D608A0";
 	setAttr -s 4 ".lnk";
 	setAttr -s 4 ".slnk";
 createNode shapeEditorManager -n "shapeEditorManager";
-	rename -uid "593A557E-4780-E435-8FB9-019D582ED6A9";
+	rename -uid "F2C7A01A-4EF1-70EF-EF6B-FC88219FCEED";
 createNode poseInterpolatorManager -n "poseInterpolatorManager";
-	rename -uid "633D05AC-4A2F-6630-A377-6892A7E03197";
+	rename -uid "5491BF8D-4180-3833-BF2F-0A8BEBD67AB8";
 createNode displayLayerManager -n "layerManager";
-	rename -uid "177574CB-421E-7EE4-59A5-3FAC3A8B3D0A";
+	rename -uid "F74E0FD0-478D-9D8E-195D-738B73D8B238";
 createNode displayLayer -n "defaultLayer";
 	rename -uid "BE0728DC-43EF-C5D0-7F19-478309CB51BE";
 	setAttr ".ufem" -type "stringArray" 0  ;
 createNode renderLayerManager -n "renderLayerManager";
-	rename -uid "BE18A6BE-461E-4FE2-8B04-FBB8ED65F20A";
+	rename -uid "E170FB1E-4577-1F3E-0F0A-5682B37EC415";
 createNode renderLayer -n "defaultRenderLayer";
 	rename -uid "D772BF6D-4C7C-B058-1ECB-16ACD2849ED1";
 	setAttr ".g" yes;
@@ -681,7 +681,6 @@ select -ne :initialShadingGroup;
 	setAttr ".ro" yes;
 select -ne :initialParticleSE;
 	setAttr ".ro" yes;
-select -ne :initialMaterialInfo;
 select -ne :defaultRenderGlobals;
 	addAttr -ci true -h true -sn "dss" -ln "defaultSurfaceShader" -dt "string";
 	setAttr ".ren" -type "string" "arnold";
